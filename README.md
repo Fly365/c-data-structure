@@ -1,2 +1,2 @@
 # data-structure
-C and java  data structure
+C data structure
