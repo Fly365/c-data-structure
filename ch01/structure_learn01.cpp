@@ -15,3 +15,9 @@ typedef struct Studnode {
   char classNo[4];
   struct Studnode *next;
 } StudType;
+
+int main(){
+
+  printf("%s\n","success");
+  return 0;
+}
