@@ -111,3 +111,74 @@ bool getElem(LinkNode *L, int i, ElemType &e){
   }
   return false;
 }
+
+//获取某个元素的相等第一个匹配的索引位置
+int locateElem(LinkNode *L, ElemType e){
+  LinkNode *p = L -> next;
+  int n = 1;
+  while(p != L && p -> data != e){
+    n++;
+    p = p -> next;
+  }
+  if(p == L)
+    return 0;
+  else
+    return n;
+}
+
+//元素新增
+bool listInsert(LinkNode * &L, int i, ElemType e){
+  int j = 0;
+  LinkNode *p = L, *s;
+  if(p -> next == L || i == 1){
+    s = (LinkNode *)malloc(sizeof(LinkNode));
+    s -> data = e;
+    s -> next = p -> next;
+    L -> next = s;
+    return true;
+  }else{
+    p = L -> next;
+    while(p != L && j < i - 2){
+      p = p -> next;
+      j++;
+    }
+    if(p == L){//未找到 i-1 个结点
+      return false;
+    }
+    s = (LinkNode *)malloc(sizeof(LinkNode));
+    s -> data = e;
+    s -> next = p -> next;
+    p -> next = s;
+    return true;
+  }
+}
+
+//删除指定位置元素的结点
+bool listDelete(LinkNode * &L, int i, ElemType &e){
+  int j = 0;
+  LinkNode *p = L,*q;
+  if(p -> next != L){
+    if(i == 1){
+      q = L -> next;
+      e = q -> data;
+      p -> next = q -> next;
+      free(q);
+      return true;
+    }else{
+      p = p -> next;
+      while(p != L && j < i-2){
+        p = p -> next;
+        j++;
+      }
+      if(p == L){
+        return false;
+      }
+      q = p -> next;
+      e = q -> data;
+      p -> next = q -> next;
+      free(q);
+      return true;
+    }
+  }
+  return false;
+}
