@@ -27,7 +27,7 @@ void createListF(LinkNode * &L, ElemType a[], int n){
   }
 }
 
-//尾插法建立玄幻链表
+//尾插法建立循环链表
 void createListR(LinkNode * &L, ElemType a[], int n){
   LinkNode *s, *r;
   int i;
