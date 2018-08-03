@@ -10,3 +10,7 @@ C data structure
   dfs.cpp 深度优先遍历算法
   bfs.cpp 广度优先遍历算法
   Prim.cpp 普里姆算法
+## ch09 查找
+  seqlist.cpp  线性表查找
+  bst.cpp 二叉排序树的基本算法
+  avl.cpp AVL平衡二叉树基本算法
