@@ -14,3 +14,6 @@ C data structure
   seqlist.cpp  线性表查找
   bst.cpp 二叉排序树的基本算法
   avl.cpp AVL平衡二叉树基本算法
+  hash-open  开放地址法构造哈希表
+
+## ch10 内排序
